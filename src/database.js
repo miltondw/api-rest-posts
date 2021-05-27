@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const config = require("./config");
+const mongodbURL = process.env.MONGODB_URI || "mongodb://localhost/posts";
 mongoose
-  .connect(URI, {
+  .connect(mongodbURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,

@@ -1,10 +1,13 @@
+if ((process.env.NODE_ENV = "development")) {
+  require("dotenv").config();
+}
 const express = require("express");
 const morgan = require("morgan");
 const multer = require("multer");
 const path = require("path");
 //Initalizations
 const app = express();
-
+require("./database");
 //Settings
 app.set("port", process.env.PORT || 3000);
 
@@ -20,7 +23,7 @@ const storage = multer.diskStorage({
 app.use("/api/posts", require("./routes/posts"));
 
 //Stactic files
-app.use(express.static(path.join(__dirname,'public')))
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(multer({ storage }).single("image"));
 app.use(express.urlencoded({ extended: false }));
