@@ -19,15 +19,15 @@ const storage = multer.diskStorage({
     cb(null, new Date().getTime() + path.extname(file.originalname));
   },
 });
+app.use(multer({ storage }).single("image"));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 //Routes
 app.use("/api/posts", require("./routes/posts"));
 
 //Stactic files
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(multer({ storage }).single("image"));
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
 //Start the server
 app.listen(app.get("port"), () => {
   console.log("server on port", app.get("port"));
