@@ -1,0 +1,29 @@
+{
+  "name": "rest-api-posts",
+  "version": "1.0.0",
+  "description": "rest api from posts",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miltondw/api-rest-posts.git"
+  },
+  "author": "miltondw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miltondw/api-rest-posts/issues"
+  },
+  "homepage": "https://github.com/miltondw/api-rest-posts#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "fs-extra": "^10.0.0",
+    "mongoose": "^5.12.11",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2"
+  }
+}
