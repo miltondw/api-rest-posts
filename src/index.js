@@ -16,6 +16,9 @@ const storage = multer.diskStorage({
     cb(null, new Date().getTime() + path.extname(file.originalname));
   },
 });
+//Routes
+app.use("/api/posts", require("./routes/posts"));
+
 app.use(multer({ storage }).single("image"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
