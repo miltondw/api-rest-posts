@@ -19,6 +19,9 @@ const storage = multer.diskStorage({
 //Routes
 app.use("/api/posts", require("./routes/posts"));
 
+//Stactic files
+app.use(express.static(path.join(__dirname,'public')))
+
 app.use(multer({ storage }).single("image"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
