@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const {
-  getPosts,
+  findAllPosts,
   cretePost,
   deletePost,
   findOnePost,
   updatePost,
 } = require("../controllers/post.controllers");
 
-router.get("/", getPosts);
+router.get("/", findAllPosts);
 router.get("/:id", findOnePost);
 router.post("/", cretePost);
 router.put("/:id", updatePost);
