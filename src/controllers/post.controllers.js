@@ -3,8 +3,8 @@ const ctrlPosts = {};
 
 ctrlPosts.findAllPosts = async (req, res) => {
   try {
-    const books = await Post.find();
-    res.json(books);
+    const posts = await Post.find();
+     res.json(posts);
   } catch (err) {
     res.status(500).json({
       message: err.message || "something goes wrong retrieving the Posts",
