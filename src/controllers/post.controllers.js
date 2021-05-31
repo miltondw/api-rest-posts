@@ -29,9 +29,9 @@ ctrlPosts.findOnePost = async (req, res) => {
 };
 ctrlPosts.cretePost = async (req, res) => {
   try {
-    const { title, paragraph, subtitle, type, imagePath } = req.body;
+    const { title, paragraph, subtitle, type, imagePath,url } = req.body;
     // const imagePath = `/uploads/${req.file.filename}`;
-    const newPost = new Post({ title, paragraph, subtitle, type, imagePath });
+    const newPost = new Post({ title, paragraph, subtitle, type, imagePath,url });
     await newPost.save();
     res.json({ message: "Post Created" });
   } catch (err) {

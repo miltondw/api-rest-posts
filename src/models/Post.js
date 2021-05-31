@@ -5,6 +5,7 @@ const postSchema = new Schema({
   paragraph: { type: Array },
   subtitle: { type: Array },
   type: { type: String, required: true },
+  url:{ type: String, required: true},
   created_at: { type: Date, default: Date.now },
 });
 
